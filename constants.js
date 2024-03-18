@@ -1,125 +1,93 @@
 export const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
 export const abi = [
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "priceFeed",
-        type: "address",
-      },
+    "type": "constructor",
+    "inputs": [
+      { "name": "priceFeed", "type": "address", "internalType": "address" }
     ],
-    stateMutability: "nonpayable",
-    type: "constructor",
+    "stateMutability": "nonpayable"
+  },
+  { "type": "fallback", "stateMutability": "payable" },
+  { "type": "receive", "stateMutability": "payable" },
+  {
+    "type": "function",
+    "name": "cheaperWithdraw",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    inputs: [],
-    name: "MINIMUM_USD",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
+    "type": "function",
+    "name": "fund",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "payable"
   },
   {
-    inputs: [],
-    name: "cheaperWithdraw",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
+    "type": "function",
+    "name": "getAddressToAmountContributed",
+    "inputs": [
+      { "name": "contributor", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
   },
   {
-    inputs: [],
-    name: "fund",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
+    "type": "function",
+    "name": "getContributionsAmount",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
   },
   {
-    inputs: [
+    "type": "function",
+    "name": "getContributor",
+    "inputs": [
       {
-        internalType: "address",
-        name: "fundingAddress",
-        type: "address",
-      },
+        "name": "contributorIndex",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
     ],
-    name: "getAddressToAmountFunded",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
   },
   {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "index",
-        type: "uint256",
-      },
+    "type": "function",
+    "name": "getContributors",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address[]", "internalType": "address[]" }
     ],
-    name: "getFunder",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
+    "stateMutability": "view"
   },
   {
-    inputs: [],
-    name: "getOwner",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
+    "type": "function",
+    "name": "getDataFeedVersion",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
   },
   {
-    inputs: [],
-    name: "getPriceFeed",
-    outputs: [
-      {
-        internalType: "contract AggregatorV3Interface",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
+    "type": "function",
+    "name": "getOwner",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
   },
   {
-    inputs: [],
-    name: "getVersion",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
+    "type": "function",
+    "name": "minUsd",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
   },
   {
-    inputs: [],
-    name: "withdraw",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
+    "type": "function",
+    "name": "withdraw",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
+  { "type": "error", "name": "FundMe__NotOwner", "inputs": [] },
 ]
